@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frm_deficiencycalculator
+Partial Class DeficiencyCalculatorForm
     Inherits System.Windows.Forms.Form
 
     'Das Formular überschreibt den Löschvorgang, um die Komponentenliste zu bereinigen.
@@ -22,68 +22,68 @@ Partial Class frm_deficiencycalculator
     'Das Bearbeiten mit dem Code-Editor ist nicht möglich.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_deficiencycalculator))
-        Me.lbl_in1 = New System.Windows.Forms.Label()
-        Me.lbl_in2 = New System.Windows.Forms.Label()
-        Me.txt_in1 = New System.Windows.Forms.TextBox()
-        Me.txt_in2 = New System.Windows.Forms.TextBox()
-        Me.txt_out = New System.Windows.Forms.TextBox()
-        Me.cmd_start = New System.Windows.Forms.Button()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DeficiencyCalculatorForm))
+        Me.Input1Label = New System.Windows.Forms.Label()
+        Me.Input2Label = New System.Windows.Forms.Label()
+        Me.Input1Txt = New System.Windows.Forms.TextBox()
+        Me.Input2Txt = New System.Windows.Forms.TextBox()
+        Me.OutputTxt = New System.Windows.Forms.TextBox()
+        Me.StartButton = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
-        'lbl_in1
+        'Input1Label
         '
-        resources.ApplyResources(Me.lbl_in1, "lbl_in1")
-        Me.lbl_in1.Name = "lbl_in1"
+        resources.ApplyResources(Me.Input1Label, "Input1Label")
+        Me.Input1Label.Name = "Input1Label"
         '
-        'lbl_in2
+        'Input2Label
         '
-        resources.ApplyResources(Me.lbl_in2, "lbl_in2")
-        Me.lbl_in2.Name = "lbl_in2"
+        resources.ApplyResources(Me.Input2Label, "Input2Label")
+        Me.Input2Label.Name = "Input2Label"
         '
-        'txt_in1
+        'Input1Txt
         '
-        resources.ApplyResources(Me.txt_in1, "txt_in1")
-        Me.txt_in1.Name = "txt_in1"
+        resources.ApplyResources(Me.Input1Txt, "Input1Txt")
+        Me.Input1Txt.Name = "Input1Txt"
         '
-        'txt_in2
+        'Input2Txt
         '
-        resources.ApplyResources(Me.txt_in2, "txt_in2")
-        Me.txt_in2.Name = "txt_in2"
+        resources.ApplyResources(Me.Input2Txt, "Input2Txt")
+        Me.Input2Txt.Name = "Input2Txt"
         '
-        'txt_out
+        'OutputTxt
         '
-        Me.txt_out.BorderStyle = System.Windows.Forms.BorderStyle.None
-        resources.ApplyResources(Me.txt_out, "txt_out")
-        Me.txt_out.Name = "txt_out"
-        Me.txt_out.ReadOnly = True
+        Me.OutputTxt.BorderStyle = System.Windows.Forms.BorderStyle.None
+        resources.ApplyResources(Me.OutputTxt, "OutputTxt")
+        Me.OutputTxt.Name = "OutputTxt"
+        Me.OutputTxt.ReadOnly = True
         '
-        'cmd_start
+        'StartButton
         '
-        resources.ApplyResources(Me.cmd_start, "cmd_start")
-        Me.cmd_start.Name = "cmd_start"
-        Me.cmd_start.UseVisualStyleBackColor = True
+        resources.ApplyResources(Me.StartButton, "StartButton")
+        Me.StartButton.Name = "StartButton"
+        Me.StartButton.UseVisualStyleBackColor = True
         '
-        'frm_deficiencycalculator
+        'DeficiencyCalculatorForm
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Controls.Add(Me.cmd_start)
-        Me.Controls.Add(Me.txt_out)
-        Me.Controls.Add(Me.txt_in2)
-        Me.Controls.Add(Me.txt_in1)
-        Me.Controls.Add(Me.lbl_in2)
-        Me.Controls.Add(Me.lbl_in1)
-        Me.Name = "frm_deficiencycalculator"
+        Me.Controls.Add(Me.StartButton)
+        Me.Controls.Add(Me.OutputTxt)
+        Me.Controls.Add(Me.Input2Txt)
+        Me.Controls.Add(Me.Input1Txt)
+        Me.Controls.Add(Me.Input2Label)
+        Me.Controls.Add(Me.Input1Label)
+        Me.Name = "DeficiencyCalculatorForm"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents lbl_in1 As System.Windows.Forms.Label
-    Friend WithEvents lbl_in2 As System.Windows.Forms.Label
-    Friend WithEvents txt_in1 As System.Windows.Forms.TextBox
-    Friend WithEvents txt_in2 As System.Windows.Forms.TextBox
-    Friend WithEvents txt_out As System.Windows.Forms.TextBox
-    Friend WithEvents cmd_start As System.Windows.Forms.Button
+    Friend WithEvents Input1Label As System.Windows.Forms.Label
+    Friend WithEvents Input2Label As System.Windows.Forms.Label
+    Friend WithEvents Input1Txt As System.Windows.Forms.TextBox
+    Friend WithEvents Input2Txt As System.Windows.Forms.TextBox
+    Friend WithEvents OutputTxt As System.Windows.Forms.TextBox
+    Friend WithEvents StartButton As System.Windows.Forms.Button
 
 End Class

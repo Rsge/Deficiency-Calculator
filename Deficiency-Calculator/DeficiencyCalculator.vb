@@ -1,36 +1,37 @@
-﻿Imports System.Math
+﻿Imports System.Data
+Imports System.Math
 
-Public Class frm_deficiencycalculator
+Public Class DeficiencyCalculatorForm
+    Private Shared ReadOnly NoOutputExc As String = "Without input nothing can be calculated.;Ohne Eingabe kann nichts berechnet werden."
+    Private Shared ReadOnly InvalidFormatExc As String = "Invalid conversion of string {} in type Double.;Ungültige Konvertierung von der Zeichenfolge {} in Typ Double."
 
-    Private Sub cmd_start_Click(sender As System.Object, e As System.EventArgs) Handles cmd_start.Click
-        Dim in1 As Double
-        Dim in2 As Double
-        Dim out As Double
-        Dim percout As Double
-        Dim txt As String()
+    Private Sub StartButton_Click(sender As System.Object, e As System.EventArgs) Handles StartButton.Click
+        Dim In1 As Double
+        Dim In2 As Double
+        Dim Out As Double
+        Dim PercOut As Double
+        Dim Txt As String()
 
         Try
-            If (txt_in1.Text = "") Or (txt_in2.Text = "") Then
-                Throw New NoNullAllowedException("Without input nothing can be calculated.;Ohne Eingabe kann nichts berechnet werden.")
+            If (Input1Txt.Text = "") Or (Input2Txt.Text = "") Then
+                Throw New NoNullAllowedException(NoOutputExc)
             End If
 
-            If (Not IsNumeric(txt_in1.Text) Or Not IsNumeric(txt_in2.Text)) Then
-                Throw New InvalidCastException("Invalid conversion of string " + txt_in1.Text + " in type Double.;Ungültige Konvertierung von der Zeichenfolge " + txt_in1.Text + " in Typ Double.")
-            ElseIf (txt_in1.Text.Contains(".")) Then
-                Throw New InvalidCastException("Invalid conversion of string " + txt_in1.Text + " in type Double.;Ungültige Konvertierung von der Zeichenfolge " + txt_in1.Text + " in Typ Double.")
-            ElseIf (txt_in2.Text.Contains(".")) Then
-                Throw New InvalidCastException("Invalid conversion of string " + txt_in2.Text + " in type Double.;Ungültige Konvertierung von der Zeichenfolge " + txt_in2.Text + " in Typ Double.")
+            If (Not IsNumeric(Input1Txt.Text) OrElse Not IsNumeric(Input2Txt.Text)) OrElse (Input1Txt.Text.Contains(".")) Then
+                Throw New InvalidCastException(InvalidFormatExc.Replace("{}", Input1Txt.Text))
+            ElseIf (Input2Txt.Text.Contains(".")) Then
+                Throw New InvalidCastException(InvalidFormatExc.Replace("{}", Input2Txt.Text))
             End If
 
-            in1 = txt_in1.Text
-            in2 = txt_in2.Text
-            out = (Abs((in1 / in2) - 1) + Abs((in2 / in1) - 1)) / 2
-            percout = out * 100
+            In1 = Input1Txt.Text
+            In2 = Input2Txt.Text
+            Out = (Abs((In1 / In2) - 1) + Abs((In2 / In1) - 1)) / 2
+            PercOut = Round(Out * 100, 2)
 
-            txt_out.Text = vbCrLf + out.ToString + vbCrLf + vbCrLf + "≈" + vbCrLf + vbCrLf + Round(percout, 2).ToString + " %"
+            OutputTxt.Text = vbCrLf & Out.ToString & vbCrLf & vbCrLf & "≈" & vbCrLf & vbCrLf & PercOut.ToString & " %"
         Catch ex As SystemException
-            txt = ex.Message.Split(";")
-            txt_out.Text = vbCrLf + txt(0) + vbCrLf + "Please use a comma for decimal numbers." + vbCrLf + vbCrLf + txt(1) + vbCrLf + "Bitte nur mit Komma getrennte Dezimalzahlen verwenden."
+            Txt = ex.Message.Split(";")
+            OutputTxt.Text = vbCrLf & Txt(0) & vbCrLf & "Please use a comma for decimal numbers." & vbCrLf & vbCrLf & Txt(1) & vbCrLf & "Bitte nur mit Komma getrennte Dezimalzahlen verwenden."
         End Try
     End Sub
 End Class

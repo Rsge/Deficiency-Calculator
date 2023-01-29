@@ -12,13 +12,13 @@ Public Class MainForm
     ''' <param name="sender">Event sender.</param>
     ''' <param name="e">Triggering event.</param>
     Private Sub StartButton_Click(sender As Object, e As EventArgs) Handles StartButton.Click
-        'Defining variables
+        ' Define variables.
         Dim measuredValue As Double
         Dim referencedValue As Double
         Dim out As Double
         Dim percOut As Double
 
-        'Getting input
+        ' Get input.
         Try
             If MeasuredInputTxt.TextLength = 0 Or ReferenceInputTxt.TextLength = 0 Then
                 Throw New NoNullAllowedException(_noOutputExc)
@@ -31,11 +31,11 @@ Public Class MainForm
             Exit Sub
         End Try
 
-        'Calculating deficiency
+        ' Calculate deficiency.
         out = (Abs((measuredValue / referencedValue) - 1) + Abs((referencedValue / measuredValue) - 1)) / 2
         percOut = Round(out * 100, 2)
 
-        'Outputting
+        ' Output.
         OutputTxt.Text = $"{out}
 
 ≈

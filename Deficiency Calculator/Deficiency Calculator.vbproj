@@ -7,9 +7,9 @@
     <StartupObject>Sub Main</StartupObject>
     <UseWindowsForms>true</UseWindowsForms>
     <MyType>WindowsForms</MyType>
-    <ApplicationIcon>Calculator.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\Calculator.ico</ApplicationIcon>
     <Authors>Jan G. (Rsge)</Authors>
-    <FileVersion>3.0.0.1</FileVersion>
+    <FileVersion>3.0.0.2</FileVersion>
     <AssemblyVersion>3.0.0.0</AssemblyVersion>
     <Description>A small app to calculate the deficiency of two decimal values.</Description>
     <Version>3.0.0</Version>
@@ -18,6 +18,10 @@
     <RepositoryType>git</RepositoryType>
     <PackageLicenseExpression>GPL-3.0</PackageLicenseExpression>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\Calculator.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <Import Include="System.Data" />

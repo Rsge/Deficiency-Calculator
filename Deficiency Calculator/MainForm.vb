@@ -1,5 +1,8 @@
 ﻿Imports System.Math
 
+''' <summary>
+''' Provides value inputs and outputs the calculation results.
+''' </summary>
 Public Class MainForm
     ''' <summary>
     ''' Error when nothing is input.

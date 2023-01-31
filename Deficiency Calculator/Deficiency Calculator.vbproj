@@ -9,7 +9,7 @@
     <MyType>WindowsForms</MyType>
     <ApplicationIcon>Calculator.ico</ApplicationIcon>
     <Authors>Jan G. (Rsge)</Authors>
-    <FileVersion>3.0.0.0</FileVersion>
+    <FileVersion>3.0.0.1</FileVersion>
     <AssemblyVersion>3.0.0.0</AssemblyVersion>
     <Description>A small app to calculate the deficiency of two decimal values.</Description>
     <Version>3.0.0</Version>
